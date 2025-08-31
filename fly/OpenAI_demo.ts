@@ -21,7 +21,7 @@ async function example() {
     enableCaching: false,
     modelName: "gpt-4o-mini",
     modelClientOptions: {
-      apiKey: process.env.USE_OPENAI_API_KEY,
+      apiKey: process.env.OPENAI_API_KEY,
       // baseURL: "https://api.deepseek.com/v1",
     },
   });
