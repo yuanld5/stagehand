@@ -121,7 +121,10 @@ npx create-browser-app
 git clone https://github.com/browserbase/stagehand.git
 cd stagehand
 pnpm install
-pnpm playwright install
+#pnpm playwright install
+#pnpm playwright install --with-deps
+pnpm playwright install chromium
+pnpm playwright install firefox
 pnpm run build
 pnpm run example # run the blank script at ./examples/example.ts
 pnpm run example 2048 # run the 2048 example at ./examples/2048.ts
