@@ -15,9 +15,8 @@ async function example() {
     },
     llmClient: new AISdkClient({
       model: deepseek("deepseek-chat"),
-    })
+    }),
   });
-
 
   await stagehand.init();
   await stagehand.page.goto("https://github.com/browserbase/stagehand");

@@ -2,7 +2,7 @@
 // require("global-agent/bootstrap");
 
 import "dotenv/config";
-import { Stagehand } from "../lib/index"
+import { Stagehand } from "../lib/index";
 
 async function main() {
   const stagehand = new Stagehand({

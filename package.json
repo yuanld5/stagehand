@@ -97,7 +97,8 @@
     "@ai-sdk/perplexity": "^1.1.7",
     "@ai-sdk/togetherai": "^0.2.6",
     "@ai-sdk/xai": "^1.2.15",
-    "ollama-ai-provider": "^1.2.0"
+    "ollama-ai-provider": "^1.2.0",
+    "agentql": "lastest"
   },
   "directories": {
     "doc": "docs",

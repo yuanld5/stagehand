@@ -1,7 +1,7 @@
 // import { Stagehand } from "@browserbasehq/stagehand";
 import { z } from "zod/v3";
 // import { Stagehand } from "@/lib/index";
-import { Stagehand } from "../lib/index"
+import { Stagehand } from "../lib/index";
 
 /**
  * This example shows how to parameterize the API key for the LLM provider.
@@ -14,7 +14,6 @@ import { Stagehand } from "../lib/index"
  */
 
 async function example() {
-
   const stagehand = new Stagehand({
     env: "LOCAL",
     verbose: 1,
