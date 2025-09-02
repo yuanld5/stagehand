@@ -169,7 +169,6 @@ export class StagehandLogger {
     if (this.usePino && this.logger) {
       // Determine the Pino log level
       const pinoLevel = levelMapping[logLine.level ?? 1] || "info";
-
       // Structure the log data
       const logData = {
         category: logLine.category,

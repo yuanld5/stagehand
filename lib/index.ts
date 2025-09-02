@@ -60,6 +60,7 @@ const defaultLogger = async (logLine: LogLine, disablePino?: boolean) => {
       {
         pretty: true,
         usePino: !disablePino,
+        level: "trace",
       },
       undefined,
     );
@@ -546,6 +547,7 @@ export class Stagehand {
         pretty: true,
         // use pino if pino is enabled, and there is no custom logger
         usePino: !logger && !disablePino,
+        level: "trace",
       },
       this.externalLogger,
     );

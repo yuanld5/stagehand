@@ -2,7 +2,6 @@ import { Stagehand } from "@/lib/index";
 import { AISdkClient } from "../lib/llm/aisdk";
 import { deepseek } from "@ai-sdk/deepseek";
 import { z } from "zod";
-
 // // AgentQL
 import { wrap, configure } from "agentql";
 import { chromium } from "playwright";
@@ -20,6 +19,10 @@ async function example() {
     llmClient: new AISdkClient({
       model: deepseek("deepseek-chat"),
     }),
+    disablePino: false,
+    logger: message => {
+      console.log(message);
+    }
   });
 
   // const browser = await chromium.launch({headless: false});
