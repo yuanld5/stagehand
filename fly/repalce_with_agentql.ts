@@ -1,5 +1,5 @@
 import { Stagehand } from "@/lib/index";
-import { AISdkClient } from "../examples/external_clients/aisdk";
+import { AISdkClient } from "../lib/llm/aisdk";
 import { deepseek } from "@ai-sdk/deepseek";
 import { z } from "zod";
 
@@ -29,11 +29,19 @@ async function example() {
   // await contributorButton.click();
 
   await stagehand.init();
+  // const page = stagehand.page;
+
   await stagehand.page.goto("https://github.com/browserbase/stagehand");
   // const observeResult = await stagehand.page.observe("What can I click on this page?");
   // console.log(`Observe result:\n`, observeResult);
   // await stagehand.page.observe("find contributors buttons");
+  // await stagehand.page.act({ action: "click on the contributors link" });
+
   await stagehand.page.act({ action: "click on the contributors" });
+
+  // const pageContent = await page.content();
+  // console.log(pageContent);
+
   const contributor = await stagehand.page.extract({
     instruction: "extract the top contributor",
     schema: z.object({

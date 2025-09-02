@@ -23,6 +23,9 @@ async function main() {
 
   const page = stagehand.page;
 
+  // await stagehand.page.goto("https://github.com/browserbase/stagehand");
+  // await stagehand.page.act({ action: "click on the contributors" });
+
   await page.goto("https://stagehand.dev");
 
   const extractResult = await page.extract(
