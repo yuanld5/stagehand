@@ -10,13 +10,13 @@ import { chromium } from "playwright";
 async function example() {
   const stagehand = new Stagehand({
     env: "LOCAL",
-    verbose: 1,
+    verbose: 2,
     enableCaching: false,
     modelName: "deepseek",
-    // modelClientOptions: {
-    //   apiKey: process.env.DEEPSEEK_API_KEY,
-    //   baseURL: "https://api.deepseek.com/v1",
-    // },
+    modelClientOptions: {
+      apiKey: process.env.DEEPSEEK_API_KEY,
+      baseURL: "https://api.deepseek.com/v1",
+    },
     llmClient: new AISdkClient({
       model: deepseek("deepseek-chat"),
     }),

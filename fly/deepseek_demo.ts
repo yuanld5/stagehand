@@ -6,7 +6,7 @@ import { z } from "zod";
 async function example() {
   const stagehand = new Stagehand({
     env: "LOCAL",
-    verbose: 1,
+    verbose: 2,
     enableCaching: false,
     modelName: "deepseek",
     // do not need it, it can work well.
