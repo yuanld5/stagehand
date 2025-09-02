@@ -1,8 +1,7 @@
 import { Stagehand } from "@/lib/index";
-import { AISdkClient } from "../examples/external_clients/aisdk";
+// import { AISdkClient } from "../examples/external_clients/aisdk";
 import { z } from "zod";
-import OpenAI from "openai";
-import { openai } from "@ai-sdk/openai";
+// import { openai } from "@ai-sdk/openai";
 
 async function example() {
 
@@ -12,12 +11,12 @@ async function example() {
     enableCaching: false,
     modelName: "qwen",
     modelClientOptions: {
-      apiKey: process.env.QWEN_API_KEY,
+      apiKey: process.env.OPENAI_API_KEY,
       baseURL: "https://dashscope.aliyuncs.com/compatible-mode/v1",
     },
-    llmClient: new AISdkClient({
-      model: openai("qwen-2.5-32b"),
-    }),
+    // llmClient: new AISdkClient({
+    //   model: openai("qwen-2.5-32b"),
+    // }),
   });
 
   await stagehand.init();
