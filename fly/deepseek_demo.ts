@@ -9,10 +9,12 @@ async function example() {
     verbose: 1,
     enableCaching: false,
     modelName: "deepseek",
-    modelClientOptions: {
-      apiKey: process.env.DEEPSEEK_API_KEY,
-      baseURL: "https://api.deepseek.com/v1",
-    },
+    // do not need it, it can work well.
+    // todo: 这说明modelClientOptions的配置是不管用的，只是环境变量管用。
+    // modelClientOptions: {
+    //   apiKey: process.env.DEEPSEEK_API_KEY,
+    //   baseURL: "https://api.deepseek.com/v1",
+    // },
     llmClient: new AISdkClient({
       model: deepseek("deepseek-chat"),
     }),
