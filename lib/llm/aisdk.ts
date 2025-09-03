@@ -16,6 +16,8 @@ import { LogLine } from "../../types/log";
 import { AvailableModel } from "../../types/model";
 import { LLMCache } from "../cache/LLMCache";
 import { CreateChatCompletionOptions, LLMClient } from "./LLMClient";
+import path from "path";
+import fs from "fs";
 
 export class AISdkClient extends LLMClient {
   public type = "aisdk" as const;
@@ -174,6 +176,19 @@ export class AISdkClient extends LLMClient {
     const isGPT5 = this.model.modelId.includes("gpt-5");
     if (options.response_model) {
       try {
+        // const now = new Date();
+        // const timestamp = now.getFullYear() +
+        //   String(now.getMonth() + 1).padStart(2, '0') +
+        //   String(now.getDate()).padStart(2, '0') + '_' +
+        //   String(now.getHours()).padStart(2, '0') +
+        //   String(now.getMinutes()).padStart(2, '0') +
+        //   String(now.getSeconds()).padStart(2, '0');
+        //
+        // const req_filename = `./request_${timestamp}.json`;
+        // const currentFilePath = require.main!.filename;
+        // const currentFileDir = path.dirname(currentFilePath);
+        // fs.writeFileSync(path.join(currentFileDir, req_filename), JSON.stringify(formattedMessages, null, 2));
+
         objectResponse = await generateObject({
           model: this.model,
           messages: formattedMessages,
@@ -188,6 +203,8 @@ export class AISdkClient extends LLMClient {
               }
             : undefined,
         });
+        // const res_filename = `./response_${timestamp}.json`;
+        // fs.writeFileSync(path.join(currentFileDir, res_filename), JSON.stringify(objectResponse, null, 2));
       } catch (err) {
         if (NoObjectGeneratedError.isInstance(err)) {
           this.logger?.({
