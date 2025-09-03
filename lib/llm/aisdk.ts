@@ -16,8 +16,8 @@ import { LogLine } from "../../types/log";
 import { AvailableModel } from "../../types/model";
 import { LLMCache } from "../cache/LLMCache";
 import { CreateChatCompletionOptions, LLMClient } from "./LLMClient";
-import path from "path";
-import fs from "fs";
+// import path from "path";
+// import fs from "fs";
 
 export class AISdkClient extends LLMClient {
   public type = "aisdk" as const;

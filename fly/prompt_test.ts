@@ -1,8 +1,8 @@
 import { deepseek } from "@ai-sdk/deepseek";
 import { z } from "zod";
-import { generateObject, /*generateText*/ } from "ai";
+import { generateObject /*generateText*/ } from "ai";
 
-const model = deepseek('deepseek-chat'); // 或 'gpt-4.1', 'o3-mini' 等
+const model = deepseek("deepseek-chat"); // 或 'gpt-4.1', 'o3-mini' 等
 
 async function main() {
   // Formator
@@ -93,8 +93,8 @@ async function main() {
   });
 
   // console.log('Output:', text);
-  console.log('Output:', object);
-  console.log('Usage:', usage);
+  console.log("Output:", object);
+  console.log("Usage:", usage);
   // console.log('Warnings:', warnings);
 }
 

@@ -4,7 +4,6 @@ import { z } from "zod";
 // import { openai } from "@ai-sdk/openai";
 
 async function example() {
-
   const stagehand = new Stagehand({
     env: "LOCAL",
     verbose: 1,
