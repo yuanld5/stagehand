@@ -1,5 +1,5 @@
 import { Stagehand } from "@/lib/index";
-import { AISdkClient } from "../examples/external_clients/aisdk";
+import { AISdkClient } from "./external_clients/aisdk";
 import { deepseek } from "@ai-sdk/deepseek";
 import { z } from "zod";
 

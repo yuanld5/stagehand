@@ -1,5 +1,5 @@
 import { Stagehand } from "@/lib/index";
-import { AISdkClient } from "../lib/llm/aisdk";
+import { AISdkClient } from "./external_clients/aisdk";
 import { deepseek } from "@ai-sdk/deepseek";
 import { z } from "zod";
 // // AgentQL
@@ -39,12 +39,9 @@ async function example() {
   // console.log(`Observe result:\n`, observeResult);
   // await stagehand.page.observe("find contributors buttons");
   // await stagehand.page.act({ action: "click on the contributors link" });
-
   await stagehand.page.act({ action: "click on the contributors" });
-
   // const pageContent = await page.content();
   // console.log(pageContent);
-
   const contributor = await stagehand.page.extract({
     instruction: "extract the top contributor",
     schema: z.object({
