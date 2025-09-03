@@ -22,6 +22,11 @@ async function example() {
 
   await stagehand.init();
   await stagehand.page.goto("https://github.com/browserbase/stagehand");
+
+  // await stagehand.page.goto("https://www.google.com");
+  // const observeResult = await stagehand.page.observe("What can I click on this page?");
+  // console.log(`Observe result:\n`, observeResult);
+
   await stagehand.page.act({ action: "click on the contributors" });
   const contributor = await stagehand.page.extract({
     instruction: "extract the top contributor",

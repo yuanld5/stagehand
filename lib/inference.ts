@@ -13,6 +13,8 @@ import {
   appendSummary,
   writeTimestampedTxtFile,
 } from "@/lib/inferenceLogUtils";
+import fs from "fs";
+import path from "path";
 
 /** Simple usage shape if your LLM returns usage tokens. */
 interface LLMUsage {
@@ -315,6 +317,18 @@ export async function observe({
     callFile = fileName;
     callTimestamp = timestamp;
   }
+  const now = new Date();
+  const timestamp = now.getFullYear() +
+    String(now.getMonth() + 1).padStart(2, '0') +
+    String(now.getDate()).padStart(2, '0') + '_' +
+    String(now.getHours()).padStart(2, '0') +
+    String(now.getMinutes()).padStart(2, '0') +
+    String(now.getSeconds()).padStart(2, '0');
+
+  // const req_filename = `./request_${timestamp}.json`;
+  // const currentFilePath = require.main!.filename;
+  // const currentFileDir = path.dirname(currentFilePath);
+  // fs.writeFileSync(path.join(currentFileDir, req_filename), JSON.stringify(messages, null, 2));
 
   const start = Date.now();
   const rawResponse = await llmClient.createChatCompletion<ObserveResponse>({
@@ -332,6 +346,9 @@ export async function observe({
     },
     logger,
   });
+
+  // const res_filename = `./response_${timestamp}.json`;
+  // fs.writeFileSync(path.join(currentFileDir, res_filename), JSON.stringify(rawResponse, null, 2));
   const end = Date.now();
   const usageTimeMs = end - start;
 
