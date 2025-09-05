@@ -8,22 +8,11 @@ async function main() {
   // query
   /*
   {
-      cookies_form {
-          reject_btn
+      popup_form {
+          close_btn
       }
   }
   */
-  // const schema = z.object({
-  //   cookies_form: z.object({
-  //     reject_btn: z.object({
-  //       elementId :z.string().describe(
-  //         "与该元素关联的 ID 字符串。切勿包含外围的方括号。"
-  //       ),
-  //       title: z.string(),
-  //       method:z.string(),
-  //     }),
-  //   }),
-  // });
 
   const schema = z.object({
     popup_form: z.object({
